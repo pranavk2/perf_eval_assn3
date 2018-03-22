@@ -1,0 +1,10 @@
+How to compile
+    g++ trace_gen.cpp -o tracegen
+
+How to run
+    ./tracegen input.trace output.trace
+    gzip output.trace.gz
+
+Description
+This is a synthetic trace generator. It only generates memory instruction traces, with all load instructions loading data into register0 and all store instructions reading data from register1. You need to write your own memory access traces in input file. Your input file should follow a strict format, such that each line only consist of two element. First element can be either 0 or 1, indicating read or write; second element is virtual memory address in decimal format. An example input trace is provided. Binary tracegen takes two argument. First is your input trace file name, second is output trace name. Please note that ChampSim takes compressed trace file. So output trace needs to be gzipped before feeding into ChampSim.
+

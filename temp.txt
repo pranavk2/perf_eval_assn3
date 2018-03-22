@@ -1,0 +1,69 @@
+
+*** ChampSim Multicore Out-of-Order Simulator ***
+
+Warmup Instructions: 0
+Simulation Instructions: 19
+Number of CPUs: 1
+LLC sets: 2048
+LLC ways: 16
+Off-chip DRAM Size: 4096 MB Channels: 1 Width: 64-bit Data Rate: 1600 MT/s
+
+CPU 0 runs tracer/output.trace.gz
+CPU 0 Bimodal branch predictor
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+
+Warmup complete CPU 0 instructions: 1 cycles: 47 (Simulation time: 0 hr 0 min 0 sec) 
+
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+*** Reached end of trace for Core: 0 Repeating trace: tracer/output.trace.gz
+Finished CPU 0 instructions: 21 cycles: 234 cumulative IPC: 0.0897436 (Simulation time: 0 hr 0 min 0 sec) 
+
+CPU 0 Branch Prediction Accuracy: -nan% MPKI: 0
+
+ChampSim completed all CPUs
+
+Region of Interest Statistics
+
+CPU 0 cumulative IPC: 0.0897436 instructions: 21 cycles: 234
+L1D TOTAL     ACCESS:         13  HIT:         11  MISS:          2
+L1D LOAD      ACCESS:         13  HIT:         11  MISS:          2
+L1D RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1D WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1D PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L1I TOTAL     ACCESS:         12  HIT:         12  MISS:          0
+L1I LOAD      ACCESS:         12  HIT:         12  MISS:          0
+L1I RFO       ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L1I WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L1I PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+L2C TOTAL     ACCESS:          2  HIT:          0  MISS:          2
+L2C LOAD      ACCESS:          2  HIT:          0  MISS:          2
+L2C RFO       ACCESS:          0  HIT:          0  MISS:          0
+L2C PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+L2C WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+L2C PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+LLC TOTAL     ACCESS:          2  HIT:          0  MISS:          2
+LLC LOAD      ACCESS:          2  HIT:          0  MISS:          2
+LLC RFO       ACCESS:          0  HIT:          0  MISS:          0
+LLC PREFETCH  ACCESS:          0  HIT:          0  MISS:          0
+LLC WRITEBACK ACCESS:          0  HIT:          0  MISS:          0
+LLC PREFETCH  REQUESTED:          0  ISSUED:          0  USEFUL:          0  USELESS:          0
+Major fault: 0 Minor fault: 5
+
+DRAM Statistics
+ CHANNEL 0
+ RQ ROW_BUFFER_HIT:          0  ROW_BUFFER_MISS:          1
+ DBUS_CONGESTED:          0
+ WQ ROW_BUFFER_HIT:          0  ROW_BUFFER_MISS:          0  FULL:          0
+
