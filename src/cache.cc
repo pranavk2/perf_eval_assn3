@@ -60,6 +60,7 @@ void CACHE::handle_fill()
         }
 #endif
 
+        // if not LLC bypass, need to fill
         uint8_t  do_fill = 1;
 
         // is this dirty?
@@ -123,8 +124,15 @@ void CACHE::handle_fill()
             sim_miss[fill_cpu][MSHR.entry[mshr_index].type]++;
             sim_access[fill_cpu][MSHR.entry[mshr_index].type]++;
 
-            fill_cache(set, way, &MSHR.entry[mshr_index]);
-
+            if (MSHR.entry[mshr_index].fill_level < fill_level)
+            {
+                // do nothing
+            }
+            else
+            {
+                // only if the fill_level is the same you fill in the cache
+                fill_cache(set, way, &MSHR.entry[mshr_index]);
+            }
             // RFO marks cache line dirty
             if (cache_type == IS_L1D) {
                 if (MSHR.entry[mshr_index].type == RFO)
@@ -141,6 +149,7 @@ void CACHE::handle_fill()
             }
 
             // update processed packets
+            // processed means whatever the cpu has processed; i.e. the caches closest to the cpu
             if (cache_type == IS_ITLB) { 
                 MSHR.entry[mshr_index].instruction_pa = block[set][way].data;
                 if (PROCESSED.occupancy < PROCESSED.SIZE)
@@ -295,6 +304,9 @@ void CACHE::handle_writeback()
 
             }
             else {
+
+                //any writeback miss except an RFO miss
+
                 // find victim
                 uint32_t set = get_set(WQ.entry[index].address), way;
                 if (cache_type == IS_LLC) {
@@ -373,7 +385,15 @@ void CACHE::handle_writeback()
                     sim_miss[writeback_cpu][WQ.entry[index].type]++;
                     sim_access[writeback_cpu][WQ.entry[index].type]++;
 
-                    fill_cache(set, way, &WQ.entry[index]);
+                    if (WQ.entry[index].fill_level < fill_level)
+                    {
+                        // do nothing
+                    }
+                    else
+                    {
+                        //only fill cache if the fill_level is the same as the WQ entry's fill_level
+                        fill_cache(set, way, &WQ.entry[index]);
+                    }
 
                     // mark dirty
                     block[set][way].dirty = 1; 
