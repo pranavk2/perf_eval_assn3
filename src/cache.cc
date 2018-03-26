@@ -440,7 +440,7 @@ void CACHE::handle_writeback()
                 }
 
 
-                // TODO -- doubt in the if condition below
+                // need to check continue_wb to check if I have to continue with the writeback
 
                 if (do_fill && WQ.entry[index].continue_wb) {
                     // update prefetcher
@@ -718,7 +718,8 @@ void CACHE::handle_read()
                             MSHR.entry[mshr_index].event_cycle = prior_event_cycle;
                         }
 
-                        MSHR_MERGED[RQ.entry[index].typeadd_rq
+                        MSHR_MERGED[RQ.entry[index].type]++;
+
                         DP ( if (warmup_complete[read_cpu]) {
                         cout << "[" << NAME << "] " << __func__ << " mshr merged";
                         cout << " instr_id: " << RQ.entry[index].instr_id << " prior_id: " << MSHR.entry[mshr_index].instr_id; 
