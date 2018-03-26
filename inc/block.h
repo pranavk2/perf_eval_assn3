@@ -78,7 +78,8 @@ class PACKET {
         delta,
         depth,
         signature,
-        confidence;
+        confidence,
+	continue_wb;
 
     uint8_t  is_producer, 
              //rob_index_depend_on_me[ROB_SIZE], 
@@ -129,6 +130,7 @@ class PACKET {
         depth = 0;
         signature = 0;
         confidence = 0;
+	continue_wb = 1;
 
 #if 0
         for (uint32_t i=0; i<ROB_SIZE; i++) {
